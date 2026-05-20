@@ -1,5 +1,16 @@
 # basic python3 image as base
-FROM harbor2.vantage6.ai/algorithms/algorithm-base
+FROM python:3.7-slim-bullseye
+
+#RUN apt-get update
+#RUN apt-get install -y --no-install-recommends build-essential
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+     build-essential \
+     libssl-dev \
+     libffi-dev \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN pip install vantage6-client==2.3.5
 
 # This is a placeholder that should be overloaded by invoking
 # docker build with '--build-arg PKG_NAME=...'
