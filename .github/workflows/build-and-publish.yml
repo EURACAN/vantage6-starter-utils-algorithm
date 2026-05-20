@@ -36,5 +36,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/euracan/vantage6-utils:latest
-            ghcr.io/euracan/vantage6-utils:${{ steps.version.outputs.VERSION }}
+            ghcr.io/euracan/starter-utils:latest
+            ghcr.io/euracan/starter-utils:${{ steps.version.outputs.VERSION }}
